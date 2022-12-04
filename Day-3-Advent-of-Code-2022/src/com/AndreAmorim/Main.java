@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -105,12 +106,11 @@ public class Main {
                             removeindexs.add(i);
                         }
                     }
-
-                    for (int i =0 ; i < removeindexs.size() ;i++) {
+                    removeindexs.sort(Comparator.reverseOrder());
+                    for (int i : removeindexs) {
 
                         repeated_letters.remove(i);
-                        removeindexs.remove(i);
-                        i--;
+
                     }
 
                     for (char character : repeated_letters) {
