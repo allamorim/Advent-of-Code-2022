@@ -30,6 +30,9 @@ public class Main {
 
             int int_part_two = part_two(br2);
             if (int_part_two != -1) {
+                if (int_part_two == -2) {
+                    System.out.println("There are no valid match!\n");
+                }
                 System.out.println("part 2: " + int_part_two);
             }
 
@@ -86,31 +89,34 @@ public class Main {
 
             String st;
             int number = 0;
+            List<Character> chars_passed = new ArrayList<>();
             while ((st = br.readLine()) != null) {
 
-                st = st.replace('-',',');
-                List<String> numbers = Arrays.asList(st.split(","));
-
-                if (Integer.parseInt(numbers.get(0)) >= Integer.parseInt(numbers.get(2))
-                        && Integer.parseInt(numbers.get(1)) <= Integer.parseInt(numbers.get(3)))
+                for (int i = 0; i< st.length();i++)
                 {
                     number++;
-                }
-                else if (Integer.parseInt(numbers.get(0)) <= Integer.parseInt(numbers.get(2))
-                        && Integer.parseInt(numbers.get(1)) >= Integer.parseInt(numbers.get(3)))
-                {
-                    number++;
-                }
-                else if (Integer.parseInt(numbers.get(1)) >= Integer.parseInt(numbers.get(2))
-                        && Integer.parseInt(numbers.get(0)) <= Integer.parseInt(numbers.get(3)))
+                    if (chars_passed.contains(st.charAt(i)))
+                    {
+                        for (int y = chars_passed.indexOf(st.charAt(i)); y>= 0; y--)
+                            chars_passed.remove(y);
 
-                {
-                    number++;
-                }
+                        chars_passed.add(st.charAt(i));
 
+                    }
+                    else
+                    {
+
+                        chars_passed.add(st.charAt(i));
+                        if (chars_passed.size()==14)
+                        {
+                            return number;
+                        }
+                    }
+
+                }
             }
 
-            return number;
+            return -2;
 
         } catch (Exception e) {
             System.out.println("Error in the counting!");
