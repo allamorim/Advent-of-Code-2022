@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1af66c03-8b03-4462-9c14-9f2267633e59" name="Changes" comment="" />
+    <list default="true" id="ef1bc309-d186-4515-b169-66c60f0bfe77" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +13,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2IVxwJ8env9h7bGRIpcy58tOajK" />
+  <component name="ProjectId" id="2IdIpVHMfqjuoh6ZxCHcDC4HKD0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -77,7 +77,7 @@
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.AndreAmorim.Main" />
-      <module name="Day-5-Advent-of-Code-2022" />
+      <module name="Day-6-Advent-of-Code-2022" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -94,22 +94,19 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1af66c03-8b03-4462-9c14-9f2267633e59" name="Changes" comment="" />
-      <created>1670280790414</created>
+      <changelist id="ef1bc309-d186-4515-b169-66c60f0bfe77" name="Changes" comment="" />
+      <created>1670505219903</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1670280790414</updated>
+      <updated>1670505219903</updated>
     </task>
     <servers />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="Application">
-        <watch expression="crates" />
+        <watch expression="st.charAt(i)" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Day_5_Advent_of_Code_2022$Main.ic" NAME="Main Coverage Results" MODIFIED="1670348058467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
