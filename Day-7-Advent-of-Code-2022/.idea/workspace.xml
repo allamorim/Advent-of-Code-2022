@@ -118,19 +118,11 @@
     <servers />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/AndreAmorim/Main.java</url>
-          <line>94</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="Integer.parseInt(matcher.group()" />
         <watch expression="d.dir" />
+        <watch expression="d.getDir().matches(&quot;/&quot;)" />
       </configuration>
     </watches-manager>
   </component>
