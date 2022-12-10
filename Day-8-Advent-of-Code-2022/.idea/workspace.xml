@@ -106,9 +106,10 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
+          <condition expression="i==24" language="JAVA" />
           <url>file://$PROJECT_DIR$/src/com/AndreAmorim/Main.java</url>
-          <line>131</line>
-          <option name="timeStamp" value="5" />
+          <line>170</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -118,5 +119,8 @@
         <watch expression="trees.get(index)" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Day_8_Advent_of_Code_2022$Main.ic" NAME="Main Coverage Results" MODIFIED="1670635088351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -59,23 +59,20 @@ public class Main {
             }
 
 
-
             int contador_linhas = 0;
-            int cont_aux = 1 ;
+            int cont_aux = 1;
             for (int i = 0; i < trees.size(); i++) {
-                if (cont_aux == column_max)
-                {
-                    cont_aux=0;
+                if (cont_aux == column_max) {
+                    cont_aux = 0;
                     contador_linhas++;
                 }
                 cont_aux++;
                 if (verifica_vertical_top(trees, column_max, i)
                         || verifica_vertical_under(trees, column_max, i) || verifica_horizontal_right(trees, column_max, i, contador_linhas)
-                || verifica_horizontal_left(trees, column_max, i, contador_linhas))
+                        || verifica_horizontal_left(trees, column_max, i, contador_linhas))
                     number++;
 
-                else
-                    System.out.println(i);
+
 
             }
 
@@ -92,7 +89,7 @@ public class Main {
     public static boolean verifica_vertical_under(List<Integer> trees, int column_max, int index) {
 
         for (int i = index; i < trees.size(); i += column_max) {
-            if (i!=index)
+            if (i != index)
                 if (trees.get(index) <= trees.get(i)) {
                     return false;
                 }
@@ -103,21 +100,21 @@ public class Main {
     public static boolean verifica_vertical_top(List<Integer> trees, int column_max, int index) {
         for (int i = index; i >= 0; i -= column_max) {
 
-            if (i!=index)
+            if (i != index)
                 if (trees.get(index) <= trees.get(i)) {
-                return false;
-            }
+                    return false;
+                }
         }
 
         return true;
     }
 
     public static boolean verifica_horizontal_left(List<Integer> trees, int column_max, int index, int contador_linhas) {
-        int muliple_columns = index%column_max;
-        for (int i = index; i >= contador_linhas*column_max; i--) {
+        int muliple_columns = index % column_max;
+        for (int i = index; i >= contador_linhas * column_max; i--) {
 
-            if (i!=index)
-            if (trees.get(index) <= trees.get(i)) {
+            if (i != index)
+                if (trees.get(index) <= trees.get(i)) {
                     return false;
                 }
 
@@ -128,11 +125,11 @@ public class Main {
 
     public static boolean verifica_horizontal_right(List<Integer> trees, int column_max, int index, int contador_linhas) {
 
-        for (int i = index; i < ((contador_linhas+1)*column_max); i++) {
+        for (int i = index; i < ((contador_linhas + 1) * column_max); i++) {
 
 
-            if (i!=index)
-            if (trees.get(index) <= trees.get(i)) {
+            if (i != index)
+                if (trees.get(index) <= trees.get(i)) {
                     return false;
                 }
 
@@ -143,6 +140,45 @@ public class Main {
 
     public static Integer part_two(BufferedReader br) {
         try {
+            String st;
+            int number = 0;
+            int column_max = 0;
+            int row_max = 0;
+            List<Integer> trees = new ArrayList<>();
+            for (int i = 0; (st = br.readLine()) != null; i++) {
+
+                column_max = st.length();
+                row_max++;
+
+                for (int y = 0; y < st.length(); y++) {
+                    trees.add(Integer.parseInt(String.valueOf(st.charAt(y))));
+                }
+            }
+
+
+            int contador_linhas = 0;
+            int cont_aux = 1;
+            int aux = 0;
+
+            for (int i = 0; i < trees.size(); i++) {
+                if (cont_aux == column_max) {
+                    cont_aux = 0;
+                    contador_linhas++;
+                }
+                cont_aux++;
+                aux = verifica_vertical_top_part2(trees, column_max, i)*
+                verifica_vertical_under_part2(trees, column_max, i)*
+                verifica_horizontal_right_part2(trees, column_max, i, contador_linhas)*
+                verifica_horizontal_left_part2(trees, column_max, i, contador_linhas);
+
+                if (aux>number)
+                    number=aux;
+
+
+            }
+
+
+            return number;
 
 
         } catch (Exception e) {
@@ -150,6 +186,74 @@ public class Main {
             return -1;
 
         }
-        return -1;
+
     }
+
+    public static int verifica_vertical_under_part2(List<Integer> trees, int column_max, int index) {
+
+        int cont = 0;
+        for (int i = index; i < trees.size(); i += column_max) {
+            if (i != index) {
+
+                if (trees.get(index) <= trees.get(i)) {
+                    return cont;
+                }
+                cont++;
+            }
+        }
+        return cont;
+    }
+
+    public static int verifica_vertical_top_part2(List<Integer> trees, int column_max, int index) {
+        int cont = 0;
+
+        for (int i = index; i >= 0; i -= column_max) {
+
+            if (i != index) {
+                if (trees.get(index) <= trees.get(i)) {
+                    return cont;
+                }
+                cont++;
+            }
+        }
+
+        return cont;
+    }
+
+    public static int verifica_horizontal_left_part2(List<Integer> trees, int column_max, int index, int contador_linhas) {
+
+
+        int cont = 0;
+
+        for (int i = index; i >= contador_linhas * column_max; i--) {
+
+            if (i != index) {
+                if (trees.get(index) <= trees.get(i)) {
+                    return cont;
+                }
+                cont++;
+            }
+        }
+
+        return cont;
+    }
+
+    public static int verifica_horizontal_right_part2(List<Integer> trees, int column_max, int index, int contador_linhas) {
+        int cont = 0;
+
+        for (int i = index; i <= ((contador_linhas + 1) * column_max); i++) {
+
+        if (i < trees.size() ){
+            if (i != index) {
+                if (trees.get(index) <= trees.get(i)) {
+                    return cont;
+                }
+            }
+            cont++;
+
+        }}
+
+        return cont;
+    }
+
 }
